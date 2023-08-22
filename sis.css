@@ -1,0 +1,167 @@
+
+/* Estilo para el contenedor de la sección "Acerca de Mí" */
+.about-sectionapp {
+    /* ... Tus estilos actuales ... */
+    position: relative;
+    overflow: hidden; /* Agrega overflow para ocultar el exceso del fondo de las olas */
+    background-image: linear-gradient(135deg, #02062c57 0%, #0054b396 80%, #001f3f 100%);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    color: white;
+    padding: 100px 0;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    min-height: 100vh;
+}
+
+
+/* Mostrar overlay al bajar a la sección */
+#app .overlayapp {
+    opacity: 1;
+}
+
+
+/* Estilo para el overlay */
+/* Estilo para el overlay */
+/* Estilo para el overlay */
+.overlayapp {
+    position: absolute;
+    top: calc(50% - 40%); /* Ajusta el valor para centrar con la nueva escala */
+    left: calc(65% - 40%);
+    transform: translate(-50%, -50%) scale(0.8);
+    width: 50%;
+    height: 80%;
+    background-color: rgba(233, 233, 233, 0.151);
+    z-index: 999;
+    opacity: 0;
+    transition: opacity 0.6s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.overlay-active {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+
+/* Estilo para el contenido del overlay */
+/* Estilo para el contenido del overlay */
+.overlay-contentapp {
+    position: absolute;
+    z-index: 1;
+    text-align: center;
+    padding: 20px;
+    display: grid;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    height: 80%;
+}
+
+/* Estilos para el icono de desplazamiento */
+.scroll-icon {
+    position: absolute;
+    bottom: 20px;
+    right: 30px;
+    cursor: pointer;
+    opacity: 0.7;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.scroll-icon img {
+    width: 40px; /* Tamaño inicial del icono */
+}
+
+.scroll-icon:hover {
+    opacity: 1;
+}
+
+.scroll-icon:hover img {
+    width: 50px; /* Tamaño aumentado del icono al pasar el mouse */
+}
+
+/* Agrega margen al contenedor del contenido */
+.content-containerapp {
+    margin-top: 10px; /* Ajusta el margen según tus necesidades */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    grid-gap: 60px; /* Espacio entre las columnas */
+}
+
+.content-rightapp {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centra horizontalmente */
+    justify-content: center;
+    margin-top: 0; /* Ajusta el espacio entre la imagen y el contenido */
+}
+
+#app h3 {
+    margin-bottom: 35px;
+}
+/* Estilos para aumentar el interlineado */
+.increased-line-height {
+    line-height: 2; /* Ajusta este valor según tus preferencias */
+}
+ 
+/* Estilos para el contenedor de overlays */
+.overlayapp-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    overflow: hidden;
+}
+
+
+.overlay-active {
+    opacity: 1;
+    display: block;
+}
+
+/* Estilos para el botón de navegación en el overlay */
+.overlay-navigation {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+    display: flex;
+    gap: 20px;
+}
+
+.overlay-button {
+    padding: 10px 20px;
+    background-color: #009600ad;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out; 
+}
+
+/* Efecto de escala al pasar el mouse por encima */
+.overlay-button:hover {
+    transform: scale(1.2); /* Aumenta el tamaño al 120% */
+}
+/* Estilo para quitar los marcadores de lista */
+ul.increased-line-height {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+/* Estilo para los elementos de la lista */
+ul.increased-line-height li {
+    margin-bottom: 10px; /* Ajusta el margen entre elementos según tu preferencia */
+}
+
+
+@media (max-width: 768px) {
+    .overlay-contentgal img {
+        max-width: 140%; /* Cambia el valor según tus preferencias */
+        max-height: 70%;
+    }
+}
+

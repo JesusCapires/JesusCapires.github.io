@@ -1,0 +1,65 @@
+/* Animación de las ondas */
+@keyframes waveAnimation {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 200% 0;
+    }
+}
+
+
+.wave-background::before {
+    transform: skewY(-10deg); /* Ajusta el valor del ángulo de inclinación */
+}
+
+.wave-background::after {
+    transform: skewY(10deg); /* Ajusta el valor del ángulo de inclinación */
+}
+
+.wave-background2::before {
+    transform: skewY(-10deg); /* Ajusta el valor del ángulo de inclinación */
+}
+
+.wave-background2::after {
+    transform: skewY(10deg); /* Ajusta el valor del ángulo de inclinación */
+}
+
+
+/* Estilo para el contenedor de las ondas */
+.wave-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 200%; /* Ancho mayor para crear el efecto de desplazamiento */
+    height: 100%;
+    z-index: -1;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+/* Estilo para las ondas */
+.wave-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('wave.svg') repeat-x bottom, url('wave.svg') repeat-x top; /* Agrega dos imágenes, una para la parte superior y otra para la parte inferior */
+    opacity: 0.6;
+    animation: waveAnimation 15s linear infinite; /* Ajusta la duración para que el movimiento sea más lento */
+}
+
+
+
+/* Animación de las ondas */
+@keyframes waveAnimation {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
