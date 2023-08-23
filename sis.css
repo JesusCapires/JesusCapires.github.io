@@ -163,5 +163,29 @@ ul.increased-line-height li {
         max-width: 140%; /* Cambia el valor según tus preferencias */
         max-height: 70%;
     }
+
+/* Agrega estas reglas a tu hoja de estilos */
+.scrolling-text-container {
+    overflow: hidden; /* Oculta cualquier contenido que se desborde */
+    white-space: nowrap; /* Evita que el texto se divida en múltiples líneas */
+    display: inline-block; /* Asegura que el contenedor se ajuste al tamaño del texto */
+}
+
+.scrolling-text {
+    animation: scrollingAnimation 15s linear infinite; /* Cambia la duración según tu preferencia */
+    display: inline-block; /* Asegura que el texto no salte de línea */
+}
+
+@keyframes scrollingAnimation {
+    0% {
+        transform: translateX(100%); /* Inicia el texto fuera del contenedor hacia la derecha */
+    }
+    100% {
+        transform: translateX(-100%); /* Mueve el texto completamente fuera del contenedor hacia la izquierda */
+    }
+}
+
+
+
 }
 
