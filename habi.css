@@ -143,11 +143,21 @@
     }
 }
 
+/* Ocultar los botones en pantallas más grandes */
+.overlay-navigationH {
+    display: none;
+}
+
 
 
 
 /* Media Query para pantallas más pequeñas, como tablets y teléfonos */
 @media (max-width: 768px) {
+
+    .overlay-navigationH {
+        display: block;
+    }
+    
     #habilidades .overlay-titleH{
         margin-top: 20px;
         font-size: 25px;

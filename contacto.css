@@ -219,3 +219,50 @@
     margin-right: 15px;
     margin-top: 60px;
 }
+
+    /* Ocultar los botones en pantallas más grandes */
+    .toggle-form-button {
+        display: none;
+    }
+
+@media (max-width: 768px) {
+    .toggle-form-button {
+        display: block;
+        width: 170px;
+    }
+
+    #contacto .toggle-form-button {
+        margin-left: 38%;
+    }
+
+    .botoncontact{
+        align-items: center;
+        text-align: center;
+    }
+
+    #contacto .overlay5{
+        align-items: center;
+        text-align: center;
+    }
+
+        /* Estilo por defecto para overlays en pantallas pequeñas */
+    .overlay5 .contact-content {
+        justify-content: center;
+        align-items: center;
+        padding: 10px; /* Agrega espacio interno */
+    }
+
+            /* Estilo por defecto para overlays en pantallas pequeñas */
+    #contacto .contact-info{
+        flex-basis: 60%;
+        margin-bottom: 25px;
+    }
+
+    #contacto .contact-form{
+        flex-basis: calc(80% - 50px);
+        margin-bottom: 15px;
+    }
+
+
+}
+

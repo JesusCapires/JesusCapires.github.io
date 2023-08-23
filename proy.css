@@ -158,6 +158,11 @@
     transition: color 0.3s ease-in-out; /* Agrega una transición suave de color */
 }
 
+/* Ocultar los botones en pantallas más grandes */
+.overlay-navigationP {
+    display: none;
+}
+
 
 /* Media Query para pantallas más pequeñas, como tablets y teléfonos */
 @media (max-width: 768px) {
@@ -212,6 +217,10 @@
     /* Cambiar el color de fondo al pasar el mouse por encima de los botones */
     .overlay-navigationP .overlay-buttonP:hover {
         background-color: #001368;
+    }
+
+    .overlay-navigationP {
+        display: block;
     }
 
     .overlay-itemP .tra {

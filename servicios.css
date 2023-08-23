@@ -157,6 +157,17 @@ h4{
 
 @media (max-width: 950px) {
 
+    /* Estilo para el botón de alternar formulario */
+    .toggle-form-button {
+        background-color: #ff5e00;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        padding: 8px 16px;
+        cursor: pointer;
+        margin-bottom: 20px;
+    }
+
     .overlay2 {
         height: 65%;
     }

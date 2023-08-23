@@ -310,3 +310,33 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 });
 
+document.addEventListener("DOMContentLoaded", function() {
+    const toggleFormButton = document.getElementById("toggle-form-button");
+    const contactForm = document.getElementById("contact-form");
+    const contactInfo = document.querySelector(".contact-info");
+    let isFormVisible = true;
+
+    const handleToggleForm = () => {
+        isFormVisible = !isFormVisible;
+        if (isFormVisible) {
+            contactForm.style.display = "none";
+            contactInfo.style.display = "block";
+            toggleFormButton.textContent = "Mostrar formulario";
+        } else {
+            contactForm.style.display = "block";
+            contactInfo.style.display = "none";
+            toggleFormButton.textContent = "Mostrar información";
+        }
+    };
+
+    toggleFormButton.addEventListener("click", handleToggleForm);
+
+    // Obtener el ancho de la ventana
+    const windowWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+
+    // Verificar si estamos en el modo responsive (ancho menor o igual a 768px)
+    if (windowWidth <= 768) {
+        // Ocultar el formulario al inicio
+        contactForm.style.display = "none";
+    }
+});
