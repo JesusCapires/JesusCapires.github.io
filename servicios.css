@@ -154,6 +154,46 @@ h4{
     transition: transform 0.3s, background 0.3s; /* Añade transición suave al degradado */
 }
 /* Media Query para pantallas más pequeñas, como tablets y teléfonos */
+
+@media (max-width: 950px) {
+
+    .overlay2 {
+        height: 65%;
+    }
+    /* Estilo por defecto para overlays en pantallas pequeñas */
+    .overlay2 .overlay-content2 {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 50%; /* Ocupa todo el alto de la pantalla */
+        width: 1050px;
+        padding: 10px; /* Agrega espacio interno */
+    }
+
+    .overlay2 .overlay-item {
+        width: 80%; /* Cambia el valor según tus preferencias */
+        margin-bottom: 20px; /* Agrega margen inferior entre los overlays */
+    }
+
+    .overlay2 .overlay-item:not(.active) {
+        display: none;
+    }
+    
+    #servicios .overlay-button {
+        padding: 5px 15px;
+        background-color: #483bbbad;
+        color: white;
+        border: none;
+        cursor: pointer;
+        transition: transform 0.3s ease-in-out; 
+    }
+}
+
+
+
+
+
 @media (max-width: 768px) {
 
     .overlay2 {
@@ -200,3 +240,30 @@ h4{
 }
 
 
+@media (max-width: 510px) {
+    .overlay2 .overlay-item {
+        width: 50%; /* Cambia el valor según tus preferencias */
+        margin-bottom: 20px; /* Agrega margen inferior entre los overlays */
+    }
+
+    .overlay2 {
+        height: 75%;
+    }
+    /* Estilo por defecto para overlays en pantallas pequeñas */
+    .overlay2 .overlay-content2 {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 50%; /* Ocupa todo el alto de la pantalla */
+        width: 750px;
+        padding: 10px; /* Agrega espacio interno */
+    }
+
+    #servicios h3 {
+        font-size: 22px;
+        text-align: center; /* Centrar el texto horizontalmente */
+        margin-top: 80px;
+    }
+
+}

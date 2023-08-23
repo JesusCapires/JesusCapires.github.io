@@ -197,7 +197,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Agregar lógica para mostrar / ocultar los botones en pantallas reducidas
     const handleResize = () => {
-        if (window.innerWidth <= 768) {
+        if (window.innerWidth <= 950) {
             prevButton.style.display = "block";
             nextButton.style.display = "block";
         } else {
@@ -236,3 +236,77 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     });
 });
+
+
+document.addEventListener("DOMContentLoaded", function() {
+    const overlayItems = document.querySelectorAll(".overlay-itemH");
+    const prevButton = document.querySelector(".prev-buttonH");
+    const nextButton = document.querySelector(".next-buttonH");
+    let currentIndex = 0;
+
+    const showOverlayItem = (index) => {
+        overlayItems.forEach((item, i) => {
+            item.classList.toggle("active", i === index);
+        });
+    };
+
+    showOverlayItem(currentIndex);
+
+    prevButton.addEventListener("click", () => {
+        currentIndex = Math.max(currentIndex - 1, 0);
+        showOverlayItem(currentIndex);
+    });
+
+    nextButton.addEventListener("click", () => {
+        currentIndex = Math.min(currentIndex + 1, overlayItems.length - 1);
+        showOverlayItem(currentIndex);
+    });
+});
+
+
+document.addEventListener("DOMContentLoaded", function() {
+    const overlayItems = document.querySelectorAll(".overlay-itemP");
+    const prevButton = document.querySelector(".prev-buttonP");
+    const nextButton = document.querySelector(".next-buttonP");
+    let currentIndex = 0;
+    let isResponsive = window.innerWidth <= 768;
+
+    const showOverlayItem = (index) => {
+        overlayItems.forEach((item, i) => {
+            if (i === index) {
+                item.classList.add("active");
+            } else {
+                item.classList.remove("active");
+            }
+        });
+    };
+
+    const handleResize = () => {
+        isResponsive = window.innerWidth <= 768;
+        if (isResponsive) {
+            showOverlayItem(currentIndex);
+        } else {
+            overlayItems.forEach(item => {
+                item.classList.add("active");
+            });
+        }
+    };
+
+    handleResize();
+    window.addEventListener("resize", handleResize);
+
+    prevButton.addEventListener("click", () => {
+        if (isResponsive) {
+            currentIndex = Math.max(currentIndex - 1, 0);
+            showOverlayItem(currentIndex);
+        }
+    });
+
+    nextButton.addEventListener("click", () => {
+        if (isResponsive) {
+            currentIndex = Math.min(currentIndex + 1, overlayItems.length - 1);
+            showOverlayItem(currentIndex);
+        }
+    });
+});
+

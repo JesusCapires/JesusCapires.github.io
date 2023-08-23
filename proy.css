@@ -157,3 +157,76 @@
     color: #ffffff; /* Cambia el color del enlace */
     transition: color 0.3s ease-in-out; /* Agrega una transición suave de color */
 }
+
+
+/* Media Query para pantallas más pequeñas, como tablets y teléfonos */
+@media (max-width: 768px) {
+    /* ... Tus estilos responsivos anteriores ... */
+
+    /* Estilo para ocultar todos los overlay-itemP excepto el primero */
+    .overlay4 .overlay-content4 .overlay-itemP {
+        display: none;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.5s ease;
+    }
+
+    .overlay4 .overlay-content4 .overlay-itemP.active {
+        display: block;
+        opacity: 1;
+        visibility: visible;
+    }
+    #proyectos .overlay-itemP{
+        align-items: center;
+        text-align: center;
+    }
+
+        /* Estilo por defecto para overlays en pantallas pequeñas */
+    .overlay4 .overlay-content4 {
+        justify-content: center;
+        align-items: center;
+        padding: 10px; /* Agrega espacio interno */
+    }
+
+    #proyectos .overlay-img {
+        /* Estilos para las imágenes */
+        /* ... Agrega tus estilos ... */
+        width: 150px;
+        height: 250px;
+        object-fit: contain;
+        margin-top: 10px;
+    }
+
+    .overlay-navigationP .overlay-buttonP {
+        margin: 5px;
+        padding: 5px 10px;
+        background-color: #ff5e00;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        width: 100px;
+        transition: background-color 0.5s ease;
+    }
+
+    /* Cambiar el color de fondo al pasar el mouse por encima de los botones */
+    .overlay-navigationP .overlay-buttonP:hover {
+        background-color: #001368;
+    }
+
+    .overlay-itemP .tra {
+        /* ... otros estilos ... */
+        white-space: nowrap;
+        animation: marquee 10s linear infinite; /* Ajusta la duración según tus preferencias */
+    }
+    
+    @keyframes marquee {
+        from {
+            transform: translateX(100%);
+        }
+        to {
+            transform: translateX(-100%);
+        }
+    }
+
+}

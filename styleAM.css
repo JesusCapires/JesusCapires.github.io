@@ -169,8 +169,23 @@
 }
 
 
+@media (max-width: 1026px) {
+    #habilidades, #servicios, #acerca-de-mi,#proyectos, #contacto{
+        background-image: linear-gradient(135deg, #0f0064 5%, #04001b 30%, #3f0000 100%);
+        background-repeat: no-repeat;
+    }
+
+    .wave-container {
+        display: none; /* Oculta el contenedor en tamaños de pantalla pequeños */
+    }
+
+    #acerca-de-mi p{
+        margin-bottom: 10px;
+    }
+}  
+
 /* Media Query para pantallas más pequeñas, como tablets y teléfonos */
-@media (max-width: 768px) {
+@media (max-width: 894px) {
     .content-container {
         display: flex;
         flex-direction: column;

@@ -143,28 +143,77 @@
     }
 }
 
-@media (max-width: 768px) {
 
-    .overlay-itemH .avanza{
-        /* ... otros estilos ... */
-        white-space: nowrap;
-        animation: marquee 10s linear infinite; /* Ajusta la duración según tus preferencias */
-    }
-    
-    @keyframes marquee {
-        from {
-            transform: translateX(100%);
-        }
-        to {
-            transform: translateX(-100%);
-        }
-    }
+
+
+/* Media Query para pantallas más pequeñas, como tablets y teléfonos */
+@media (max-width: 768px) {
     #habilidades .overlay-titleH{
+        margin-top: 20px;
         font-size: 25px;
     }
     #habilidades .overlay-descriptionH{
         font-size: 15px;
     }
-}
+    .overlay3 {
+        height: 65%;
+    }
+    /* Estilo para ocultar todos los overlay-itemH excepto el primero */
+    .overlay3 .overlay-content3 .overlay-itemH {
+        display: none;
+        margin: 0 auto;
+        text-align: center;
+        flex-basis: 30%; /* Cambia el valor según tus preferencias */
+        width: 100%;
+    }
 
+
+    #habilidades .overlay-itemH{
+        margin: 0 auto; /* Centra horizontalmente */
+        align-items: center;
+        text-align: center; /* Centra el contenido */
+        margin-bottom: 25px;
+        height: 200px;
+        width: 100%;
+        flex-basis: 50%;
+    }
+
+    .overlay3 .overlay-content3 .overlay-itemH.active {
+        display: block;
+    }
+
+    /* Estilo para los botones en el modo responsive */
+    .overlay-navigationH {
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    .overlay-navigationH .overlay-buttonH {
+        margin: 5px;
+        padding: 5px 10px;
+        background-color: #ff5e00;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        width: 100px;
+        transition: background-color 0.5s ease;
+    }
+
+    /* Cambiar el color de fondo al pasar el mouse por encima de los botones */
+    .overlay-navigationH .overlay-buttonH:hover {
+        background-color: #001368;
+    }
+    
+    /* Estilo para la imagen dentro de cada overlay item */
+    #habilidades .overlay-img {
+        /* Estilos para las imágenes */
+        /* ... Agrega tus estilos ... */
+        width: 80px;
+        height: 80px;
+        object-fit: contain;
+        margin-top: 50px;
+        margin-bottom: 20px;
+    }
+}
 
