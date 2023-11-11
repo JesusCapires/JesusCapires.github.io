@@ -1,0 +1,294 @@
+/* styles.css */
+@import url('vector.css');
+@import url('transi.css');
+@import url('servicios.css');
+@import url('habi.css');
+@import url('proy.css');
+@import url('contacto.css');
+@import url('footer.css');
+@import url('styleAM.css');
+@import url('app.css');
+@import url('gale.css');
+@import url('sis.css');
+
+
+
+/* Estilos para el fondo del menú de navegación cuando haces scroll */
+.navbar-scrolled {
+    background-image: linear-gradient(5deg, #f76816, #b30000); /* Cambia los colores del degradado según tu preferencia */
+    transition: background-image 0.3s;
+}
+
+
+/* Agregar estilos para el navbar fijo en la parte superior */
+.navbar {
+    position: fixed;
+    width: 100%;
+    height: 70px;
+}
+
+/* Agregar color al texto del menú*/
+.navbar-nav .nav-link {
+    color: #ffffff; /* Cambia este valor al blanco deseado */
+    font-size: 16px;
+    position: relative;
+    padding-bottom: 5px;
+}
+
+/* Tamaño de la letra del titulo */
+.navbar-brand {
+    font-size: 24px; /* Cambia este valor al tamaño de fuente deseado */
+    margin-left: 60px;
+}
+
+
+/* Cambiar estilo de solo algunas palabras */
+.navbar-brand::first-letter {
+    font-size: 36px;
+    font-weight: bold;
+    color: var(--first-letter-color, #ff5e00); /* Utiliza la variable --first-letter-color */
+}
+
+
+.navbar-brand::nth-child(3) {
+    font-style: italic;
+}
+
+.navbar-nav .nav-link::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px; /* Altura de la línea */
+    background-color: #ffffff; /* Color inicial de la línea */
+    transform: scaleX(0); /* Inicialmente oculta la línea */
+    transform-origin: bottom left;
+    transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out; /* Transiciones para el efecto */
+}
+
+/* Cambiar el tamaño y color de la línea al pasar el mouse */
+.navbar-nav .nav-link:hover {
+    color: #ffffff; /* Cambiar color del texto al pasar el mouse */
+    font-size: 20px;
+}
+
+.navbar-nav .nav-link:hover::after {
+    transform: scaleX(1); /* Mostrar la línea al pasar el mouse */
+    background-color: #ff5e00; /* Cambiar color de la línea al pasar el mouse */
+}
+
+/* Estilo para hacer que el contenido ocupe toda la pantalla */
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+/* Estilo para el contenedor del contenido */
+.container-fluid {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+/* Estilo para el contenido interno */
+.content-inner {
+    width: 100%;
+    max-width: 800px;
+    padding: 20px;
+    text-align: left;
+}
+
+.content-text {
+    font-size: 18px;
+}
+
+.content-title {
+    font-size: 36px;
+}
+
+.btn {
+    background: linear-gradient(135deg, #f76816, #b30000);
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold; /* Agrega esta línea para el texto en negritas */
+    cursor: pointer;
+    text-align: center;
+    transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+/* Al pasar el mouse por encima */
+.btn:hover {
+    background: linear-gradient(135deg, #1a16f7, #ff0a0a); /* Cambia el color a naranja luminoso */
+    transform: scale(1.1); /* Aumenta ligeramente el tamaño del botón */
+}
+
+/* Estilo del fondo con movimiento */
+body {
+    background-color: #06001b; /* Color de fondo azul marino */
+    margin: 0; /* Asegura que no haya margen en el cuerpo */
+    padding-top: 70px; /* Ajusta el valor para dejar espacio para el navbar */
+    position: relative;
+    z-index: 0;
+    padding: 0;
+    padding-top: 0;
+}
+
+/* Estilos para las figuras flotantes */
+.floating-shapes-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    z-index: 1;
+}
+
+@keyframes floatAnimation {
+    0%, 100% {
+        transform: translateY(0) rotate(0deg);
+    }
+    25% {
+        transform: translateY(-200px) rotate(45deg);
+    }
+    50% {
+        transform: translateY(-400px) rotate(90deg);
+    }
+    75% {
+        transform: translateY(-600px) rotate(135deg);
+    }
+}
+
+
+.floating-shape {
+    position: absolute;
+    transform-origin: center;
+    animation: floatAnimation 10s infinite;
+}
+
+.floating-circle {
+    border-radius: 50%;
+    background-color: transparent; /* Sin color de fondo */
+    border: 1px solid white; /* Contorno blanco */
+    width: 10px;
+    height: 10px;
+}
+
+.floating-triangle {
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 20px solid rgba(255, 255, 255, 0.336);
+    border-top: 0; /* Eliminar la propiedad border-top-color */
+    transform-origin: center;
+    animation: floatAnimation 10s infinite;
+}
+
+
+
+.floating-square {
+    width: 10px;
+    height: 10px;
+    background-color: transparent; /* Sin color de fondo */
+    border: 1px solid white; /* Contorno blanco */
+}
+
+
+@keyframes floatAnimation {
+    0%, 100% {
+        transform: translateY(0) rotate(0deg);
+    }
+    25% {
+        transform: translateY(-200px) rotate(45deg);
+    }
+    50% {
+        transform: translateY(-400px) rotate(90deg);
+    }
+    75% {
+        transform: translateY(-600px) rotate(135deg);
+    }
+}
+
+/* Asegura un espacio para las figuras flotantes sin afectar el scroll */
+.content-container {
+    padding-bottom: 100vh; /* Ajusta el valor según sea necesario */
+}
+
+/* Alinear div de presentación a la izquierda */
+.left-aligned-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding-left: 55px; /* Añade un margen izquierdo para que no quede pegado al borde */
+    background-color: #06001b; /* Ajusta el color de fondo si lo necesitas */
+    color: white; /* Ajusta el color del texto si lo necesitas */
+    z-index: 1; /* Asegura que esté sobre las figuras flotantes */
+}
+/* Cambiar de tamaño a los parrafos*/
+.par1 {
+    font-size: 20px; /* Tamaño de letra para todas las etiquetas <p> */
+    color: white; /* Color de letra */
+    margin-bottom: 1rem; /* Espacio inferior entre párrafos */
+}
+
+.typed-text {
+    font-size: 1.6em;
+    background-image: linear-gradient(135deg, #ff3300, #ff944d);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: colorChange 2s infinite alternate;
+}
+
+.typed-line {
+    display: inline-block;
+    width: 2px;
+    height: 1.2em;
+    background-color: transparent;
+    margin-right: 5px;
+    animation: blink 0.7s infinite;
+    animation: colorChange 2s infinite alternate;
+}
+
+
+@keyframes colorChange {
+    0%, 100% {
+        background-image: linear-gradient(135deg, #ff1100, #ff944d);
+    }
+    50% {
+        background-image: linear-gradient(135deg, #ff944d, #ff1100);
+    }
+}
+
+
+
+.typed-cursor {
+    display: inline-block;
+    width: 4px;
+    height: 1.2em;
+    background-color: rgb(212, 114, 2); /* Cambia el color según sea necesario */
+    margin-left: 5px;
+    animation: blink 0.7s infinite;
+}
+
+
+@keyframes blink {
+    50% {
+        opacity: 0;
+    }
+}
+
+
+

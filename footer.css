@@ -1,0 +1,31 @@
+/* Estilos para el footer */
+footer {
+    background-color: #06001b; /* Color de fondo del footer */
+    color: white; /* Color del texto */
+    text-align: center; /* Centrar el contenido del footer */
+    padding: 10px 0; /* Espaciado interno arriba y abajo */
+}
+
+/* Estilos para el texto del footer */
+.footer-content p {
+    font-size: 15px; /* Tamaño de fuente */
+    margin: 0; /* Eliminar margen vertical para el párrafo */
+}
+
+/* Estilos para los íconos de redes sociales */
+.social-links a {
+    display: inline-block; /* Mostrar los íconos en línea */
+    margin: 0 10px; /* Espaciado horizontal entre íconos */
+    transition: transform 0.3s; /* Transición al aumentar el tamaño al pasar el mouse */
+}
+
+.social-links a img {
+    width: 30px; /* Tamaño inicial de los íconos */
+    height: 30px;
+    margin-top: 10px;
+}
+
+/* Cambiar el tamaño de los íconos al pasar el mouse */
+.social-links a:hover img {
+    transform: scale(1.15); /* Aumentar el tamaño al 110% */
+}
