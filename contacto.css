@@ -2,46 +2,35 @@
 #contacto * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
-/* Estilo para la sección "Acerca de Mí" */
+/* Estilo para la sección de contacto */
 #contacto {
-    background-image: linear-gradient(135deg, #ff5e00 0%, #b30000 30%, #3f0000 100%);
+    background-image: linear-gradient(135deg, #06001b 0%, #0033aa 50%, #00d4ff 100%);
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
     color: white;
     padding: 100px 0;
-    display: flex; /* Añade flex para que los elementos se ajusten verticalmente */
-    align-items: center; /* Centra verticalmente los elementos */
-    text-align: center; /* Centra horizontalmente el contenido */
-    min-height: 100vh; /* Asegura que la sección ocupe al menos el 100% del alto de la pantalla */
-    padding-top: 0;
-    z-index: 1;
-    position: relative;
-}
-
-/* Estilo para la sección "Acerca de Mí" */
-#contacto {
-    position: relative; /* Agrega posición relativa para posicionar el overlay */
-    overflow: hidden; /* Agrega overflow para ocultar el exceso del fondo de las olas */
-    padding: 100px 0;
+    display: flex;
+    align-items: center;
+    text-align: center;
     min-height: 100vh;
+    position: relative;
+    overflow: hidden;
 }
 
-
-
-/* Desactivar el efecto de las figuras flotantes en la sección "Acerca de Mí" */
+/* Desactivar el efecto de las figuras flotantes */
 .about-section5 .floating-shapes-container {
     display: none;
 }
 
-/* Estilo para el contenedor de la sección*/
+/* Estilo para el contenedor de la sección */
 .about-section5 {
-    /* ... Tus estilos actuales ... */
     position: relative;
-    overflow: hidden; /* Agrega overflow para ocultar el exceso del fondo de las olas */
-    background-image: linear-gradient(135deg, #ff5e00 0%, #b30000 30%, #001f3f 100%);
+    overflow: hidden;
+    background-image: linear-gradient(135deg, #06001b 0%, #004e92 40%, #001f3f 100%);
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
@@ -53,216 +42,294 @@
     min-height: 100vh;
 }
 
-
-/* Estilo para el overlay */
+/* Estilo para el overlay - Diseño mejorado */
 .overlay5 {
-    /* Posicionamiento y dimensiones del overlay */
-    /* ... Agrega tus estilos ... */
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 80%;
-    height: 75%;
-    background-color: rgba(233, 233, 233, 0.151); /* Cambia la opacidad del fondo */
-    z-index: 0;
+    width: 600px;
+    max-width: 90%;
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 20px;
+    padding: 50px 40px;
+    box-shadow: 0 8px 32px 0 rgba(0, 78, 146, 0.37);
+    z-index: 1;
     opacity: 1;
-    transition: opacity 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
 }
 
-/* Estilo para el contenido del overlay */
-.overlay-content5 {
-    /* Estilos para organizar los overlay items */
-    /* ... Agrega tus estilos ... */
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: flex-start;
-    padding: 20px;
-    max-width: 1200px;
-    margin: 0 auto;
+.overlay5:hover {
+    transform: translate(-50%, -50%) translateY(-5px);
+    box-shadow: 0 12px 40px 0 rgba(0, 78, 146, 0.5);
 }
 
-
-/* Estilos para el título y descripción del overlay */
-
-#proyectos .overlay-titleP {
-    font-size: 32px;
-    margin-bottom: 20px;
-    margin-top: 10px;
+/* Título principal con efecto elegante */
+#contacto h3 {
+    font-size: 42px;
+    font-weight: 700;
+    margin: 0 0 15px 0;
+    letter-spacing: 1px;
+    background: linear-gradient(135deg, #ffffff 0%, #00d4ff 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: 0 2px 10px rgba(0, 212, 255, 0.3);
 }
 
+/* Subtítulo */
+#contacto h4 {
+    font-size: 20px;
+    font-weight: 400;
+    margin: 30px 0 40px 0;
+    color: rgba(255, 255, 255, 0.85);
+    letter-spacing: 0.5px;
+}
 
+/* Línea decorativa debajo del título */
+#contacto h3::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, #00d4ff, transparent);
+    margin: 15px auto 0;
+    border-radius: 2px;
+}
+
+/* Contenedor del contenido */
 .contact-content {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    padding: 20px;
-    text-align: center;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
 }
 
-.contact-info,
-.contact-form {
-    flex-basis: calc(50% - 10px);
-}
-
-/* Estilo para la información de contacto */
 .contact-info {
-    margin-bottom: 20px;
+    width: 100%;
     display: flex;
-    flex-direction: column; /* Diseño de columna para los elementos de información */
-    align-items: center; /* Centrar horizontalmente */
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
 }
 
-
-#contacto .contact-form input,
-#contacto .contact-form textarea,
-#contacto .contact-form button {
-    width: 100%;
-    margin-bottom: 25px;
+/* Ocultar el formulario */
+.contact-form {
+    display: none !important;
 }
 
-#contacto h4{
-    margin-top: 40px;
-}
-
-#contacto h3{
-    margin-top: 10px;
-}
-
-/* Estilos generales para el formulario */
-#contacto .styled-form {
-    max-width: 400px;
-    margin: 0 auto;
-    padding: 20px;
-    background-color: rgba(0, 0, 0, 0.438); /* Fondo negro con transparencia */
-    border: 2px solid #ff5e00; /* Contorno naranja brillante */
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(255, 94, 0, 0.5); /* Sombra naranja suave */
-    margin-top: 20px;
-    margin-right: 20px;
-    height: 320px;
-}
-
-/* Estilos para los campos de entrada */
-.styled-form input[type="text"],
-.styled-form input[type="email"],
-.styled-form textarea {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 10px;
-    border: none;
-    background-color: rgba(255, 255, 255, 0.1); /* Fondo blanco con transparencia */
-    color: #fff; /* Color de texto blanco */
-    border-radius: 5px;
-    border: 1px solid #ff5e00; /* Contorno naranja brillante */
-}
-
-/* Estilos para el botón de enviar */
-#contacto .styled-form button[type="submit"] {
-    background-color: #ff5e00; /* Fondo naranja */
-    color: #fff; /* Texto blanco */
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease-in-out;
-    margin-top: 20px;
-}
-/* Cambiar los estilos del formulario en hover */
-#contacto .styled-form:hover {
-    background-color: rgba(0, 0, 0, 0.5); /* Cambio de color al pasar el mouse */
-    border-color: #00a70e; /* Cambio de color del contorno al pasar el mouse */
-}
-
-/* Cambiar los estilos de los campos de entrada en hover */
-#contacto .styled-form:hover input[type="text"],
-#contacto .styled-form:hover input[type="email"],
-#contacto .styled-form:hover textarea {
-    background-color: rgba(255, 255, 255, 0.2); /* Cambio de color del fondo al pasar el mouse */
-    border-color: #00a70e; /* Cambio de color del contorno al pasar el mouse */
-}
-
-/* Estilos para el botón de enviar */
-#contacto .styled-form button[type="submit"] {
-    /* ... Tus estilos actuales ... */
-    transition: background-color 0.3s ease-in-out, border-color 0.3s ease-in-out; /* Agrega transiciones */
-}
-
-/* Cambiar los estilos del botón en hover */
-#contacto .styled-form button[type="submit"]:hover {
-    background-color: #00a70e; /* Cambio de color al pasar el mouse */
-}
-
-
-/* Estilos para los elementos de información */
+/* Elementos de información - Diseño card elegante */
 .info-item {
     display: flex;
     align-items: center;
-    margin-bottom: 10px;
+    justify-content: flex-start;
+    width: 100%;
+    max-width: 450px;
+    padding: 18px 25px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
 }
 
-/* Estilos para los iconos */
-.info-item img {
-    width: 20px; /* Ajusta el tamaño del icono según tu preferencia */
-    height: auto; /* Mantiene la proporción del icono */
-    margin-right: 10px; /* Espacio entre el icono y el texto */
+/* Efecto hover en info-items */
+.info-item:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(0, 212, 255, 0.5);
+    transform: translateX(5px);
+    box-shadow: 0 4px 15px rgba(0, 212, 255, 0.2);
 }
 
-/* Estilos para los párrafos de información */
-#contacto  .info-item p {
+/* Borde animado al hover */
+.info-item::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 3px;
+    background: linear-gradient(180deg, #00d4ff, #0033aa);
+    transform: scaleY(0);
+    transition: transform 0.3s ease;
+}
+
+.info-item:hover::before {
+    transform: scaleY(1);
+}
+
+/* Iconos mejorados */
+.info-item img,
+#contacto .imgC {
+    width: 28px;
+    height: 28px;
+    margin: 0 15px 0 0;
+    filter: drop-shadow(0 2px 4px rgba(0, 212, 255, 0.3));
+    transition: transform 0.3s ease;
+}
+
+.info-item:hover img {
+    transform: scale(1.1) rotate(5deg);
+}
+
+/* Texto de información */
+#contacto .info-item p {
     color: #fff;
-    margin-top: 60px;
+    margin: 0;
+    font-size: 16px;
+    font-weight: 400;
+    text-align: left;
+    line-height: 1.5;
+    letter-spacing: 0.3px;
 }
 
-#contacto .imgC{
-    margin-right: 15px;
-    margin-top: 60px;
+#contacto .info-item p b {
+    font-weight: 600;
+    color: #00d4ff;
+    margin-right: 8px;
 }
 
-    /* Ocultar los botones en pantallas más grandes */
-    .toggle-form-button {
-        display: none;
+/* Ocultar botones */
+.toggle-form-button,
+.botoncontact {
+    display: none !important;
+}
+
+/* Media Query para tablets */
+@media (max-width: 1024px) {
+    .overlay5 {
+        width: 550px;
+        padding: 45px 35px;
     }
 
+    #contacto h3 {
+        font-size: 38px;
+    }
+
+    #contacto h4 {
+        font-size: 19px;
+    }
+
+    .info-item {
+        max-width: 100%;
+    }
+}
+
+/* Media Query para móviles */
 @media (max-width: 768px) {
-    .toggle-form-button {
-        display: block;
-        width: 170px;
+    #contacto {
+        padding: 80px 20px;
+        min-height: 100vh;
     }
 
-    #contacto .toggle-form-button {
-        margin-left: 38%;
+    .overlay5 {
+        width: 95%;
+        max-width: 500px;
+        padding: 40px 25px;
+        border-radius: 16px;
     }
 
-    .botoncontact{
-        align-items: center;
-        text-align: center;
+    #contacto h3 {
+        font-size: 32px;
+        margin-bottom: 10px;
     }
 
-    #contacto .overlay5{
-        align-items: center;
-        text-align: center;
+    #contacto h3::after {
+        width: 60px;
+        height: 2px;
+        margin-top: 12px;
     }
 
-        /* Estilo por defecto para overlays en pantallas pequeñas */
-    .overlay5 .contact-content {
-        justify-content: center;
-        align-items: center;
-        padding: 10px; /* Agrega espacio interno */
+    #contacto h4 {
+        font-size: 18px;
+        margin: 25px 0 35px 0;
     }
 
-            /* Estilo por defecto para overlays en pantallas pequeñas */
-    #contacto .contact-info{
-        flex-basis: 60%;
-        margin-bottom: 25px;
+    .contact-info {
+        gap: 20px;
     }
 
-    #contacto .contact-form{
-        flex-basis: calc(80% - 50px);
-        margin-bottom: 15px;
+    .info-item {
+        padding: 16px 20px;
+        max-width: 100%;
     }
 
+    #contacto .info-item p {
+        font-size: 15px;
+    }
 
+    .info-item img,
+    #contacto .imgC {
+        width: 24px;
+        height: 24px;
+        margin-right: 12px;
+    }
 }
 
+/* Media Query para pantallas muy pequeñas */
+@media (max-width: 480px) {
+    #contacto {
+        padding: 60px 15px;
+    }
+
+    .overlay5 {
+        width: 98%;
+        padding: 35px 20px;
+        border-radius: 14px;
+    }
+
+    #contacto h3 {
+        font-size: 28px;
+    }
+
+    #contacto h3::after {
+        width: 50px;
+    }
+
+    #contacto h4 {
+        font-size: 16px;
+        margin: 20px 0 30px 0;
+    }
+
+    .contact-info {
+        gap: 16px;
+    }
+
+    .info-item {
+        padding: 14px 16px;
+        border-radius: 10px;
+    }
+
+    #contacto .info-item p {
+        font-size: 14px;
+    }
+
+    .info-item img,
+    #contacto .imgC {
+        width: 22px;
+        height: 22px;
+        margin-right: 10px;
+    }
+}
+
+/* Animación de entrada suave */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -45%);
+    }
+
+    to {
+        opacity: 1;
+        transform: translate(-50%, -50%);
+    }
+}
+
+.overlay5 {
+    animation: fadeInUp 0.8s ease-out;
+}

@@ -3,32 +3,25 @@
 #acerca-de-mi * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
-/* Estilo para la sección "Acerca de Mí" */
 #acerca-de-mi {
-    background-image: linear-gradient(135deg, #ff5e00 0%, #b30000 30%, #3f0000 100%);
+    background-image: linear-gradient(135deg, #06001b 0%, #0033aa 50%, #00d4ff 100%);
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
     color: white;
-    padding: 100px 0;
-    display: flex; /* Añade flex para que los elementos se ajusten verticalmente */
-    align-items: center; /* Centra verticalmente los elementos */
-    text-align: center; /* Centra horizontalmente el contenido */
-    min-height: 100vh; /* Asegura que la sección ocupe al menos el 100% del alto de la pantalla */
-    padding-top: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    min-height: 100vh;
+    position: relative;
     z-index: 1;
 }
 
-
-.wave-container {
-    display: block;
-    position: absolute;
-    min-height: 100vh;
-    z-index: -999; /* Asegura que esté detrás de otros elementos */
-    
-}
 
 
 /* Desactivar el efecto de las figuras flotantes en la sección "Acerca de Mí" */
@@ -38,202 +31,703 @@
 
 /* Estilo para el contenedor de la sección "Acerca de Mí" */
 .about-section {
-    /* ... Tus estilos actuales ... */
     position: relative;
-    overflow: hidden; /* Agrega overflow para ocultar el exceso del fondo de las olas */
-    background-image: linear-gradient(135deg, #ff5e00 0%, #b30000 30%, #001f3f 100%);
+    overflow: hidden;
+    background-image: linear-gradient(135deg, #06001b 0%, #004e92 40%, #001f3f 100%);
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
     color: white;
-    padding: 100px 0;
+    padding: 0;
     display: flex;
     align-items: center;
+    justify-content: center;
     text-align: center;
     min-height: 100vh;
 }
 
 /* Estilo para la sección "Acerca de Mí" */
 #acerca-de-mi {
-    position: relative; /* Agrega posición relativa para posicionar el overlay */
-    overflow: hidden; /* Agrega overflow para ocultar el exceso del fondo de las olas */
-    padding: 100px 0;
-    min-height: 100vh;
+    position: relative;
+    overflow: hidden;
 }
-
 
 /* Mostrar overlay al bajar a la sección */
 #acerca-de-mi .overlay {
     opacity: 1;
 }
 
-/* Estilo para el overlay */
-/* Estilo para el overlay */
-/* Estilo para el overlay */
+/* ===== OVERLAY CON GLASSMORPHISM PREMIUM ===== */
 .overlay {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 60%;
-    height: 60%;
-    background-color: rgba(233, 233, 233, 0.151); /* Cambia la opacidad del fondo */
-    z-index: -1; /* Coloca el overlay detrás de los elementos en primer plano */
-    opacity: 1; /* Mantiene la opacidad del overlay */
-    transition: opacity 0.3s ease-in-out;
+    position: relative;
+    width: 65%;
+    max-width: 1100px;
+    height: auto;
+    background: rgba(255, 255, 255, 0.06);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 30px;
+    padding: 60px 50px;
+    box-shadow:
+        0 8px 32px 0 rgba(0, 78, 146, 0.4),
+        0 15px 60px 0 rgba(0, 212, 255, 0.2),
+        inset 0 1px 0 0 rgba(255, 255, 255, 0.1);
+    z-index: 1;
+    opacity: 1;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    animation: fadeInScale 0.8s ease-out;
+    margin: auto;
 }
 
-/* Estilo para el contenido del overlay */
+.overlay:hover {
+    transform: translateY(-10px);
+    box-shadow:
+        0 16px 48px 0 rgba(0, 78, 146, 0.5),
+        0 20px 80px 0 rgba(0, 212, 255, 0.3),
+        inset 0 1px 0 0 rgba(255, 255, 255, 0.2);
+    border-color: rgba(0, 212, 255, 0.3);
+}
+
+@keyframes fadeInScale {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
 /* Estilo para el contenido del overlay */
 .overlay-content {
-    position: absolute;
-    z-index: 1;
-    text-align: center;
-    padding: 20px;
-    display: grid;
-    grid-template-columns: auto 1fr; /* Una columna para la imagen y otra para el contenido */
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 80%;
-    height: 80%;
-}
-
-/* ... Tus estilos anteriores ... */
-
-/* Agrega margen al contenedor del contenido */
-.content-container {
-    margin-top: 50px; /* Ajusta el margen según tus necesidades */
+    position: relative;
+    width: 100%;
+    height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
-    grid-gap: 60px; /* Espacio entre las columnas */
 }
 
-/* Ajusta el tamaño de la imagen */
-.content-left img {
-    width: 150px;
+/* Agrega margen al contenedor del contenido */
+.content-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 70px;
+    width: 100%;
+    animation: slideInContent 1s ease-out 0.3s both;
 }
+
+@keyframes slideInContent {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ===== ESTILOS PREMIUM PARA LA FOTO ===== */
+.content-left {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+/* Resplandor de fondo con pulso */
+.content-left::before {
+    content: '';
+    position: absolute;
+    width: 220px;
+    height: 220px;
+    background: radial-gradient(circle, rgba(0, 212, 255, 0.5) 0%, rgba(0, 124, 240, 0.3) 40%, transparent 70%);
+    border-radius: 50%;
+    filter: blur(30px);
+    z-index: -1;
+    animation: pulseGlow 4s ease-in-out infinite;
+}
+
+/* Anillo decorativo giratorio con gradiente */
+.content-left::after {
+    content: '';
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    border: 4px solid transparent;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #00d4ff 0%, #0066ff 25%, #0033aa 50%, #0066ff 75%, #00d4ff 100%) border-box;
+    -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    animation: rotateRing 10s linear infinite;
+    z-index: 1;
+    filter: drop-shadow(0 0 20px rgba(0, 212, 255, 0.6));
+}
+
+/* Imagen premium con múltiples efectos */
+.content-left img {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid rgba(255, 255, 255, 0.3);
+    box-shadow:
+        0 0 30px rgba(0, 212, 255, 0.6),
+        0 0 60px rgba(0, 78, 146, 0.4),
+        0 10px 40px rgba(0, 0, 0, 0.3),
+        inset 0 0 30px rgba(0, 212, 255, 0.15);
+    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    z-index: 2;
+    filter: brightness(1.05) contrast(1.08) saturate(1.1);
+}
+
+/* Hover espectacular en la imagen */
+.content-left:hover img {
+    transform: scale(1.1) rotate(3deg);
+    box-shadow:
+        0 0 45px rgba(0, 212, 255, 0.8),
+        0 0 90px rgba(0, 78, 146, 0.6),
+        0 15px 60px rgba(0, 0, 0, 0.4),
+        inset 0 0 40px rgba(0, 212, 255, 0.25);
+    border-color: rgba(0, 212, 255, 0.7);
+    filter: brightness(1.15) contrast(1.12) saturate(1.2);
+}
+
+/* Animación de pulso mejorada */
+@keyframes pulseGlow {
+
+    0%,
+    100% {
+        transform: scale(1);
+        opacity: 0.7;
+    }
+
+    50% {
+        transform: scale(1.2);
+        opacity: 1;
+    }
+}
+
+/* Animación de rotación del anillo */
+@keyframes rotateRing {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* ===== FIN DE ESTILOS DE LA FOTO ===== */
 
 .content-right {
     display: flex;
     flex-direction: column;
-    align-items: center; /* Centra horizontalmente */
+    align-items: center;
     justify-content: center;
-    margin-top: 50px; /* Ajusta el espacio entre la imagen y el contenido */
+    max-width: 550px;
 }
 
-
+/* ===== TÍTULO CON GRADIENTE ANIMADO ===== */
 #acerca-de-mi h3 {
-    font-size: 32px;
-    margin-bottom: 40px;
-    text-align: center; /* Centrar el texto horizontalmente */
+    font-size: 48px;
+    font-weight: 700;
+    margin-bottom: 30px;
+    text-align: center;
+    letter-spacing: 1px;
+    background: linear-gradient(135deg, #ffffff 0%, #00d4ff 40%, #0066ff 70%, #ffffff 100%);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: gradientShift 4s ease infinite, fadeInDown 0.8s ease-out 0.5s both;
+    text-shadow: 0 0 30px rgba(0, 212, 255, 0.3);
+    position: relative;
 }
 
+@keyframes gradientShift {
+
+    0%,
+    100% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Línea decorativa animada */
+#acerca-de-mi h3::after {
+    content: '';
+    display: block;
+    width: 120px;
+    height: 4px;
+    background: linear-gradient(90deg, transparent, #00d4ff 20%, #0066ff 50%, #00d4ff 80%, transparent);
+    background-size: 200% auto;
+    margin: 25px auto 0;
+    border-radius: 2px;
+    box-shadow:
+        0 0 15px rgba(0, 212, 255, 0.6),
+        0 0 30px rgba(0, 102, 255, 0.4);
+    animation: expandLine 1s ease-out 0.8s both, lineGlow 3s ease-in-out 1.5s infinite;
+}
+
+@keyframes expandLine {
+    from {
+        width: 0;
+        opacity: 0;
+    }
+
+    to {
+        width: 120px;
+        opacity: 1;
+    }
+}
+
+@keyframes lineGlow {
+
+    0%,
+    100% {
+        background-position: 0% 50%;
+        box-shadow:
+            0 0 15px rgba(0, 212, 255, 0.6),
+            0 0 30px rgba(0, 102, 255, 0.4);
+    }
+
+    50% {
+        background-position: 100% 50%;
+        box-shadow:
+            0 0 25px rgba(0, 212, 255, 0.8),
+            0 0 50px rgba(0, 102, 255, 0.6);
+    }
+}
+
+/* ===== PÁRRAFO MEJORADO ===== */
 #acerca-de-mi p {
     text-align: center;
-    font-size: 15px;
-    color: #ffffff;
-    margin-bottom: 50px; /* Ajusta el espacio entre el texto y el botón */
+    font-size: 18px;
+    line-height: 1.8;
+    color: rgba(255, 255, 255, 0.95);
+    margin-bottom: 40px;
+    font-weight: 400;
+    letter-spacing: 0.4px;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    animation: fadeIn 1s ease-out 0.7s both;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
 }
 
 .content-right button {
-    margin-top: 10px; /* Ajusta el espacio sobre el botón */
+    margin-top: 0;
 }
 
-/* Estilos para el botón personalizado */
-/* ... Tus estilos anteriores ... */
-
-
-/* Estilos para el botón personalizado */
+/* ===== BOTÓN ESPECTACULAR CON EFECTOS PREMIUM ===== */
 .custom-button {
-    background: linear-gradient(135deg, #f76816, #b30000);
-    border: none;
+    background: linear-gradient(135deg, #007cf0 0%, #0052cc 50%, #003d99 100%);
+    background-size: 200% auto;
+    border: 2px solid rgba(0, 212, 255, 0.4);
     color: white;
-    padding: 25px 40px; /* Ajusta el padding para aumentar el tamaño del botón */
-    font-size: 16px;
-    font-weight: bold; /* Añade negritas al texto para mayor énfasis */
+    padding: 16px 40px;
+    font-size: 18px;
+    font-weight: 700;
     cursor: pointer;
     text-align: center;
-    border-radius: 25px; /* Aplica el borde redondo */
-    transition: transform 0.3s, background-color 0.3s, padding 0.3s; /* Agrega transición para padding */
-    height: 40px;
-    width: 170px;
+    border-radius: 50px;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    height: 60px;
+    min-width: 220px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    letter-spacing: 0.8px;
+    position: relative;
+    overflow: hidden;
+    box-shadow:
+        0 6px 20px rgba(0, 124, 240, 0.5),
+        0 0 40px rgba(0, 212, 255, 0.2),
+        inset 0 1px 0 rgba(255, 255, 255, 0.2),
+        inset 0 -1px 0 rgba(0, 0, 0, 0.2);
+    animation: fadeInUp 1s ease-out 0.9s both, buttonPulse 3s ease-in-out 2s infinite;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
-/* Cambio de tamaño y color al pasar el cursor */
+/* Efecto de brillo deslizante diagonal */
+.custom-button::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -100%;
+    width: 100%;
+    height: 200%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+    transform: rotate(20deg);
+    transition: left 0.7s ease;
+}
+
+.custom-button:hover::before {
+    left: 200%;
+}
+
+/* Resplandor de fondo del botón */
+.custom-button::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(0, 212, 255, 0.3), transparent 70%);
+    filter: blur(20px);
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    z-index: -1;
+}
+
+.custom-button:hover::after {
+    opacity: 1;
+}
+
+/* Hover espectacular del botón */
 .custom-button:hover {
-    background: linear-gradient(135deg, #ff5e00, #f76816); /* Cambia el degradado al pasar el cursor */
-    padding: 30px 45px; /* Ajusta el padding al pasar el cursor */
-    transform: scale(1.05); /* Aumenta el tamaño al pasar el cursor */
+    background: linear-gradient(135deg, #00d4ff 0%, #0099ff 50%, #007cf0 100%);
+    background-size: 200% auto;
+    background-position: right center;
+    transform: translateY(-5px) scale(1.08);
+    box-shadow:
+        0 12px 35px rgba(0, 212, 255, 0.7),
+        0 0 60px rgba(0, 124, 240, 0.5),
+        0 0 100px rgba(0, 212, 255, 0.3),
+        inset 0 2px 0 rgba(255, 255, 255, 0.3),
+        inset 0 -2px 0 rgba(0, 0, 0, 0.2);
+    border-color: rgba(0, 212, 255, 0.8);
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
 }
 
+.custom-button:active {
+    transform: translateY(-2px) scale(1.05);
+    box-shadow:
+        0 6px 20px rgba(0, 212, 255, 0.6),
+        0 0 40px rgba(0, 124, 240, 0.4);
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes buttonPulse {
+
+    0%,
+    100% {
+        box-shadow:
+            0 6px 20px rgba(0, 124, 240, 0.5),
+            0 0 40px rgba(0, 212, 255, 0.2),
+            inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    }
+
+    50% {
+        box-shadow:
+            0 6px 20px rgba(0, 124, 240, 0.6),
+            0 0 50px rgba(0, 212, 255, 0.4),
+            inset 0 1px 0 rgba(255, 255, 255, 0.3);
+    }
+}
+
+/* ===== MEDIA QUERIES - FONDOS INTACTOS ===== */
 
 @media (max-width: 1026px) {
-    #habilidades, #servicios, #acerca-de-mi,#proyectos, #contacto{
-        background-image: linear-gradient(135deg, #0f0064 5%, #04001b 30%, #3f0000 100%);
+
+    /* FONDOS MANTENIDOS */
+    #habilidades,
+    #servicios,
+    #acerca-de-mi,
+    #proyectos,
+    #contacto {
+        background-image: linear-gradient(135deg, #06001b 0%, #001f4d 40%, #003d7a 100%);
         background-repeat: no-repeat;
+        background-attachment: fixed;
     }
 
-    .wave-container {
-        display: none; /* Oculta el contenedor en tamaños de pantalla pequeños */
+    .overlay {
+        width: 75%;
+        padding: 50px 40px;
     }
 
-    #acerca-de-mi p{
-        margin-bottom: 10px;
+    .content-container {
+        gap: 50px;
     }
-}  
 
-/* Media Query para pantallas más pequeñas, como tablets y teléfonos */
+    .content-left img {
+        width: 160px;
+        height: 160px;
+    }
+
+    .content-left::before {
+        width: 200px;
+        height: 200px;
+    }
+
+    .content-left::after {
+        width: 180px;
+        height: 180px;
+    }
+
+    #acerca-de-mi h3 {
+        font-size: 42px;
+    }
+
+    #acerca-de-mi p {
+        font-size: 17px;
+    }
+}
+
 @media (max-width: 894px) {
     .content-container {
-        display: flex;
         flex-direction: column;
-        align-items: center;
-        text-align: center;
+        gap: 40px;
     }
-    
+
+    .overlay {
+        width: 85%;
+        padding: 45px 35px;
+    }
+
     .content-left {
-        display: none; /* Oculta la imagen en tamaños de pantalla pequeños */
+        margin-bottom: 20px;
     }
 
-    .wave-container {
-        display: none; /* Oculta el contenedor en tamaños de pantalla pequeños */
+    .content-left img {
+        width: 140px;
+        height: 140px;
     }
 
-    #acerca-de-mi p{
+    .content-left::before {
+        width: 180px;
+        height: 180px;
+    }
+
+    .content-left::after {
+        width: 160px;
+        height: 160px;
+    }
+
+    /* FONDOS MANTENIDOS */
+    #acerca-de-mi {
+        background-image: linear-gradient(135deg, #06001b 0%, #002147 50%, #004e92 100%);
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+    }
+
+    #servicios {
+        background-image: linear-gradient(135deg, #06001b 0%, #002147 50%, #004e92 100%);
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+    }
+
+    #habilidades,
+    #proyectos,
+    #contacto {
+        background-image: linear-gradient(135deg, #06001b 0%, #002147 50%, #004e92 100%);
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+    }
+
+    #acerca-de-mi h3 {
+        font-size: 38px;
         margin-bottom: 25px;
     }
 
-    #acerca-de-mi{
-        background-image: linear-gradient(135deg, #0f0064 5%, #04001b 30%, #3f0000 100%);
-        background-repeat: no-repeat;
+    #acerca-de-mi h3::after {
+        width: 100px;
+        margin-top: 20px;
     }
 
-    #servicios{
-        background-image: linear-gradient(135deg, #0f0064 5%, #04001b 30%, #3f0000 100%);
-        background-repeat: no-repeat;
+    #acerca-de-mi p {
+        font-size: 16px;
+        margin-bottom: 30px;
     }
 
-    #habilidades, #proyectos, #contacto{
-        background-image: linear-gradient(135deg, #0f0064 5%, #04001b 30%, #3f0000 100%);
-        background-repeat: no-repeat;
+    .custom-button {
+        min-width: 200px;
+        height: 55px;
+        font-size: 17px;
     }
 
+    /* Menú responsive mejorado */
+    .navbar-collapse {
+        background: linear-gradient(135deg, #004e92 0%, #06001b 100%);
+        text-align: center;
+        border-radius: 12px;
+        border: 1px solid rgba(0, 212, 255, 0.3);
+        padding: 15px;
+        box-shadow: 0 8px 20px rgba(0, 78, 146, 0.5);
+        backdrop-filter: blur(10px);
+    }
 
+    .navbar-collapse .nav-link {
+        padding: 12px 20px;
+        margin: 5px 0;
+        border-radius: 8px;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
 
+    .navbar-collapse .nav-link:hover {
+        background: linear-gradient(135deg, rgba(0, 212, 255, 0.25), rgba(0, 124, 240, 0.35));
+        transform: translateX(8px);
+        box-shadow: 0 4px 15px rgba(0, 212, 255, 0.4);
+        border-radius: 8px;
+    }
 
-
-/* Estilos para el menú responsive */
-.navbar-collapse {
-    background: linear-gradient(135deg, #ff5e00, #b30000);
-    text-align: center;
-    border-radius: 10px;
+    .navbar-collapse .nav-link:active {
+        background: linear-gradient(135deg, rgba(0, 212, 255, 0.35), rgba(0, 78, 146, 0.35));
+    }
 }
 
-/* Cambiar el color de fondo al pasar el mouse por encima */
-.navbar-collapse .nav-link:hover {
-    background-color: rgba(0, 0, 0, 0.63); /* Cambia el color según tus preferencias */
+@media (max-width: 768px) {
+    .content-container {
+        flex-direction: column;
+        gap: 35px;
+    }
+
+    .content-left {
+        display: flex;
+    }
+
+    .content-left img {
+        width: 120px;
+        height: 120px;
+    }
+
+    .content-left::before {
+        width: 150px;
+        height: 150px;
+    }
+
+    .content-left::after {
+        width: 135px;
+        height: 135px;
+    }
+
+    .overlay {
+        width: 90%;
+        padding: 40px 25px;
+        border-radius: 25px;
+    }
+
+    .content-right {
+        max-width: 100%;
+    }
 }
 
+@media (max-width: 480px) {
+
+    /* FONDOS MANTENIDOS */
+    #acerca-de-mi,
+    #servicios,
+    #habilidades,
+    #proyectos,
+    #contacto {
+        background-image: linear-gradient(135deg, #001f3f 0%, #004e92 50%, #0066cc 100%);
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        padding: 60px 15px;
+    }
+
+    .overlay {
+        width: 95%;
+        padding: 35px 20px;
+        border-radius: 20px;
+    }
+
+    .overlay-content {
+        padding: 0;
+    }
+
+    #acerca-de-mi h3 {
+        font-size: 32px;
+        margin-bottom: 20px;
+    }
+
+    #acerca-de-mi h3::after {
+        width: 80px;
+        height: 3px;
+        margin-top: 18px;
+    }
+
+    #acerca-de-mi p {
+        font-size: 15px;
+        margin-bottom: 30px;
+        line-height: 1.7;
+    }
+
+    .custom-button {
+        min-width: 180px;
+        height: 50px;
+        font-size: 16px;
+    }
+
+    .navbar-collapse {
+        padding: 12px;
+        border-radius: 10px;
+    }
+
+    .navbar-collapse .nav-link {
+        padding: 10px 15px;
+        font-size: 15px;
+    }
+
+    .content-left img {
+        width: 100px;
+        height: 100px;
+    }
+
+    .content-left::before {
+        width: 130px;
+        height: 130px;
+    }
+
+    .content-left::after {
+        width: 115px;
+        height: 115px;
+    }
 }

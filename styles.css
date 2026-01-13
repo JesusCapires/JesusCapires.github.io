@@ -14,11 +14,16 @@
 
 
 /* Estilos para el fondo del menú de navegación cuando haces scroll */
+/* Estilos para el fondo del menú de navegación cuando haces scroll */
 .navbar-scrolled {
-    background-image: linear-gradient(5deg, #f76816, #b30000); /* Cambia los colores del degradado según tu preferencia */
-    transition: background-image 0.3s;
+    /* Un degradado elegante de azul profundo a azul oscuro */
+    background-image: linear-gradient(135deg, #004e92, #000428); 
+    /* Añadimos una ligera transparencia para un efecto moderno */
+    background-color: rgba(6, 0, 27, 0.95);
+    border-bottom: 1px solid rgba(0, 251, 255, 0.2); /* Línea sutil cian en la base */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5); /* Sombra para dar profundidad */
+    transition: all 0.4s ease-in-out;
 }
-
 
 /* Agregar estilos para el navbar fijo en la parte superior */
 .navbar {
@@ -46,7 +51,7 @@
 .navbar-brand::first-letter {
     font-size: 36px;
     font-weight: bold;
-    color: var(--first-letter-color, #ff5e00); /* Utiliza la variable --first-letter-color */
+    -webkit-text-fill-color: transparent;
 }
 
 
@@ -75,7 +80,7 @@
 
 .navbar-nav .nav-link:hover::after {
     transform: scaleX(1); /* Mostrar la línea al pasar el mouse */
-    background-color: #ff5e00; /* Cambiar color de la línea al pasar el mouse */
+    background-color: #0059ff; /* Cambiar color de la línea al pasar el mouse */
 }
 
 /* Estilo para hacer que el contenido ocupe toda la pantalla */
@@ -110,21 +115,24 @@ html, body {
 }
 
 .btn {
-    background: linear-gradient(135deg, #f76816, #b30000);
+    /* Degradado de azul medio a azul oscuro */
+    background: linear-gradient(135deg, #007cf0, #0033aa);
     border: none;
     color: white;
     padding: 10px 20px;
     font-size: 16px;
-    font-weight: bold; /* Agrega esta línea para el texto en negritas */
+    font-weight: bold;
     cursor: pointer;
     text-align: center;
-    transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+    border-radius: 5px; /* Opcional: añade bordes redondeados para un look moderno */
+    transition: background 0.3s ease-in-out, transform 0.3s ease-in-out;
 }
 
 /* Al pasar el mouse por encima */
 .btn:hover {
-    background: linear-gradient(135deg, #1a16f7, #ff0a0a); /* Cambia el color a naranja luminoso */
-    transform: scale(1.1); /* Aumenta ligeramente el tamaño del botón */
+    /* Degradado de azul eléctrico a azul real */
+    background: linear-gradient(135deg, #00dfd8, #007cf0);
+    transform: scale(1.1);
 }
 
 /* Estilo del fondo con movimiento */
@@ -242,14 +250,26 @@ body {
     color: white; /* Color de letra */
     margin-bottom: 1rem; /* Espacio inferior entre párrafos */
 }
-
 .typed-text {
     font-size: 1.6em;
-    background-image: linear-gradient(135deg, #ff3300, #ff944d);
+    /* Degradado de azul cian a azul eléctrico */
+    background-image: linear-gradient(135deg, #00fbff, #007cf0);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
     animation: colorChange 2s infinite alternate;
+    /* Añadimos un sutil filtro de brillo para que resalte en el fondo oscuro */
+    filter: drop-shadow(0 0 5px rgba(0, 251, 255, 0.3));
+}
+
+/* Definición de la animación para que el color oscile suavemente */
+@keyframes colorChange {
+    from {
+        filter: hue-rotate(0deg) brightness(1);
+    }
+    to {
+        filter: hue-rotate(20deg) brightness(1.3);
+    }
 }
 
 .typed-line {
@@ -262,15 +282,6 @@ body {
     animation: colorChange 2s infinite alternate;
 }
 
-
-@keyframes colorChange {
-    0%, 100% {
-        background-image: linear-gradient(135deg, #ff1100, #ff944d);
-    }
-    50% {
-        background-image: linear-gradient(135deg, #ff944d, #ff1100);
-    }
-}
 
 
 
