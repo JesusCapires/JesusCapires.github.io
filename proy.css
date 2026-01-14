@@ -1,262 +1,611 @@
+/* Reset de margen y padding */
 #proyectos,
 #proyectos * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
-/* Estilo para la sección "Acerca de Mí" */
+/* Sección principal */
 #proyectos {
     background-image: linear-gradient(135deg, #06001b 0%, #0033aa 50%, #00d4ff 100%);
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
     color: white;
-    padding: 100px 0;
+    padding: 0;
     display: flex;
-    /* Añade flex para que los elementos se ajusten verticalmente */
     align-items: center;
-    /* Centra verticalmente los elementos */
+    justify-content: center;
     text-align: center;
-    /* Centra horizontalmente el contenido */
     min-height: 100vh;
-    /* Asegura que la sección ocupe al menos el 100% del alto de la pantalla */
-    padding-top: 0;
+    position: relative;
     z-index: 1;
-    position: relative;
-}
-
-/* Estilo para la sección "Acerca de Mí" */
-#proyectos {
-    position: relative;
-    /* Agrega posición relativa para posicionar el overlay */
     overflow: hidden;
-    /* Agrega overflow para ocultar el exceso del fondo de las olas */
-    padding: 100px 0;
-    min-height: 100vh;
 }
 
-
-
-/* Desactivar el efecto de las figuras flotantes en la sección "Acerca de Mí" */
+/* Desactivar figuras flotantes */
 .about-section4 .floating-shapes-container {
     display: none;
 }
 
-/* Estilo para el contenedor de la sección*/
+/* Contenedor de la sección */
 .about-section4 {
-    /* ... Tus estilos actuales ... */
     position: relative;
     overflow: hidden;
-    /* Agrega overflow para ocultar el exceso del fondo de las olas */
     background-image: linear-gradient(135deg, #06001b 0%, #004e92 40%, #001f3f 100%);
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
     color: white;
-    padding: 100px 0;
+    padding: 0;
     display: flex;
     align-items: center;
+    justify-content: center;
     text-align: center;
     min-height: 100vh;
 }
 
-
-/* Estilo para el overlay */
+/* ===== OVERLAY PREMIUM CON GLASSMORPHISM ===== */
 .overlay4 {
-    /* Posicionamiento y dimensiones del overlay */
-    /* ... Agrega tus estilos ... */
+    position: relative;
+    width: 85%;
+    max-width: 1200px;
+    height: auto;
+    background: rgba(255, 255, 255, 0.06);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 30px;
+    padding: 60px 50px;
+    box-shadow:
+        0 8px 32px 0 rgba(0, 78, 146, 0.4),
+        0 15px 60px 0 rgba(0, 212, 255, 0.2),
+        inset 0 1px 0 0 rgba(255, 255, 255, 0.1);
+    z-index: 1;
+    opacity: 1;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    animation: fadeInScale 0.8s ease-out;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+@keyframes fadeInScale {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* ===== TÍTULO PRINCIPAL CON GRADIENTE ANIMADO ===== */
+#proyectos .overlay-titleP {
+    font-size: 48px;
+    font-weight: 700;
+    margin-bottom: 15px;
+    text-align: center;
+    letter-spacing: 1px;
+    background: linear-gradient(135deg, #ffffff 0%, #00d4ff 40%, #0066ff 70%, #ffffff 100%);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: gradientShift 4s ease infinite, fadeInDown 0.8s ease-out 0.3s both;
+    position: relative;
+}
+
+@keyframes gradientShift {
+
+    0%,
+    100% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Línea decorativa bajo el título */
+#proyectos .overlay-titleP::after {
+    content: '';
+    display: block;
+    width: 130px;
+    height: 4px;
+    background: linear-gradient(90deg, transparent, #00d4ff 20%, #0066ff 50%, #00d4ff 80%, transparent);
+    background-size: 200% auto;
+    margin: 20px auto 0;
+    border-radius: 2px;
+    box-shadow:
+        0 0 15px rgba(0, 212, 255, 0.6),
+        0 0 30px rgba(0, 102, 255, 0.4);
+    animation: expandLine 1s ease-out 0.6s both, lineGlow 3s ease-in-out 1.2s infinite;
+}
+
+@keyframes expandLine {
+    from {
+        width: 0;
+        opacity: 0;
+    }
+
+    to {
+        width: 130px;
+        opacity: 1;
+    }
+}
+
+@keyframes lineGlow {
+
+    0%,
+    100% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+}
+
+/* ===== DESCRIPCIÓN ===== */
+#proyectos .overlay-descriptionP {
+    font-size: 18px;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 50px;
+    letter-spacing: 0.3px;
+    animation: fadeIn 1s ease-out 0.5s both;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+/* ===== CONTENEDOR DE PROYECTOS ===== */
+.overlay-content4 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    padding: 20px;
+    max-width: 1100px;
+    margin: 0 auto;
+    width: 100%;
+    flex: 1;
+    animation: slideInContent 1s ease-out 0.7s both;
+}
+
+@keyframes slideInContent {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ===== CARDS DE PROYECTOS PREMIUM ===== */
+#proyectos .overlay-itemP {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    padding: 50px 35px;
+    border-radius: 25px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    text-align: center;
+    min-height: 200px;
+    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+    box-shadow:
+        0 4px 15px rgba(0, 78, 146, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    cursor: pointer;
+}
+
+/* Borde animado premium con múltiples capas */
+#proyectos .overlay-itemP::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    border-radius: 25px;
+    background: linear-gradient(135deg, #00d4ff, #0066ff, #0033aa, #0066ff, #00d4ff);
+    background-size: 300% 300%;
+    opacity: 0;
+    transition: opacity 0.6s ease;
+    z-index: -1;
+    animation: gradientBorder 4s ease infinite;
+}
+
+@keyframes gradientBorder {
+
+    0%,
+    100% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+}
+
+#proyectos .overlay-itemP:hover::before {
+    opacity: 1;
+}
+
+/* Resplandor de fondo con pulso */
+#proyectos .overlay-itemP::after {
+    content: '';
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 80%;
-    height: 75%;
-    background-color: rgba(233, 233, 233, 0.151);
-    /* Cambia la opacidad del fondo */
-    z-index: 0;
+    width: 120%;
+    height: 120%;
+    background: radial-gradient(circle, rgba(0, 212, 255, 0.3), transparent 70%);
+    opacity: 0;
+    transition: opacity 0.6s ease;
+    z-index: -1;
+    border-radius: 50%;
+}
+
+#proyectos .overlay-itemP:hover::after {
     opacity: 1;
-    transition: opacity 0.3s ease-in-out;
+    animation: projectPulse 2.5s ease-in-out infinite;
 }
 
-/* Estilo para el contenido del overlay */
-.overlay-content4 {
-    /* Estilos para organizar los overlay items */
-    /* ... Agrega tus estilos ... */
+@keyframes projectPulse {
+
+    0%,
+    100% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 0.3;
+    }
+
+    50% {
+        transform: translate(-50%, -50%) scale(1.15);
+        opacity: 0.6;
+    }
+}
+
+/* Hover espectacular con efecto 3D */
+#proyectos .overlay-itemP:hover {
+    background: linear-gradient(135deg, rgba(0, 212, 255, 0.18), rgba(0, 102, 255, 0.12));
+    transform: translateY(-15px) scale(1.03);
+    box-shadow:
+        0 20px 50px rgba(0, 212, 255, 0.6),
+        0 0 80px rgba(0, 124, 240, 0.4),
+        inset 0 2px 0 rgba(255, 255, 255, 0.2);
+    border-color: rgba(0, 212, 255, 0.5);
+}
+
+/* ===== ENLACES DE PROYECTOS ===== */
+.overlay-itemP a {
+    text-decoration: none;
+    color: inherit;
+    width: 100%;
+    height: 100%;
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: flex-start;
-    padding: 20px;
-    max-width: 1200px;
-    margin: 0 auto;
+    align-items: center;
+    justify-content: center;
 }
 
-/* Estilo para cada overlay item */
-#proyectos .overlay-itemP {
-    flex-basis: calc(50% - 20px);
-    margin: 10px;
-    text-align: center;
-    background-color: rgba(216, 216, 216, 0.274);
-    margin-bottom: 5px;
-    height: 300px;
+/* ===== TÍTULOS DE PROYECTOS PREMIUM ===== */
+#proyectos .overlay-itemP h4 {
+    font-size: 24px;
+    font-weight: 700;
+    color: #ffffff;
+    letter-spacing: 0.8px;
+    line-height: 1.5;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    margin: 0;
+    padding: 10px 20px;
     position: relative;
-    overflow: hidden;
-    transition: transform 0.3s, background-image 0.3s;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
 }
 
-/* Efecto degradado para el overlay-itemH al pasar el mouse */
-.overlay-itemP:hover {
-    transform: scale(1.03);
-    /* Aumentar el tamaño al pasar el mouse */
-    background-image: linear-gradient(135deg, #00fbff, rgba(0, 124, 240, 0.7));
-    /* Cambiar el color de fondo en degradado */
+/* Efecto de subrayado animado */
+#proyectos .overlay-itemP h4::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #00d4ff, #0066ff, #00d4ff);
+    border-radius: 2px;
+    transition: width 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 0 15px rgba(0, 212, 255, 0.8);
 }
 
-/* Estilo para la imagen dentro de cada overlay item */
-#proyectos .overlay-img {
-    /* Estilos para las imágenes */
-    /* ... Agrega tus estilos ... */
-    width: 250px;
-    height: 250px;
-    object-fit: contain;
-    margin-top: 10px;
+#proyectos .overlay-itemP:hover h4::after {
+    width: 90%;
 }
 
-/* Estilos para el título y descripción del overlay */
-
-#proyectos .overlay-titleP {
-    font-size: 32px;
-    margin-bottom: 20px;
-    margin-top: 15px;
+/* Hover del título con efecto espectacular */
+#proyectos .overlay-itemP:hover h4 {
+    color: #00d4ff;
+    text-shadow:
+        0 0 20px rgba(0, 212, 255, 0.9),
+        0 0 40px rgba(0, 212, 255, 0.6),
+        0 2px 15px rgba(0, 0, 0, 0.4);
+    transform: scale(1.08);
+    letter-spacing: 1.2px;
 }
 
-#proyectos .overlay-descriptionP {
-    font-size: 18px;
-    margin-bottom: 20px;
-
+/* Animación de entrada para cada card */
+#proyectos .overlay-itemP:nth-child(1) {
+    animation: cardSlideIn 0.8s ease-out 0.9s both;
 }
 
-.overlay-itemH .tra {
-    /* ... otros estilos ... */
-    white-space: nowrap;
-    animation: marquee 10s linear infinite;
-    /* Ajusta la duración según tus preferencias */
+#proyectos .overlay-itemP:nth-child(2) {
+    animation: cardSlideIn 0.8s ease-out 1s both;
 }
 
-@keyframes marquee {
+#proyectos .overlay-itemP:nth-child(3) {
+    animation: cardSlideIn 0.8s ease-out 1.1s both;
+}
+
+#proyectos .overlay-itemP:nth-child(4) {
+    animation: cardSlideIn 0.8s ease-out 1.2s both;
+}
+
+#proyectos .overlay-itemP:nth-child(5) {
+    animation: cardSlideIn 0.8s ease-out 1.3s both;
+}
+
+@keyframes cardSlideIn {
     from {
-        transform: translateX(100%);
+        opacity: 0;
+        transform: translateY(40px) scale(0.9);
     }
 
     to {
-        transform: translateX(-100%);
+        opacity: 1;
+        transform: translateY(0) scale(1);
     }
 }
 
-#proyectos h4 {
-    margin-top: 20px
-}
-
-
-.overlay-itemP h4:hover {
-    text-decoration: none;
-    /* Asegura que la línea subrayada se quite al pasar el mouse */
-    color: #442f00;
-    /* Cambia el color del enlace al pasar el mouse sobre él */
-}
-
-
-.overlay-itemP a {
-    text-decoration: none;
-    /* Quita la línea subrayada por defecto */
-    color: #ffffff;
-    /* Cambia el color del enlace */
-    transition: color 0.3s ease-in-out;
-    /* Agrega una transición suave de color */
-}
-
-/* Ocultar los botones en pantallas más grandes */
-.overlay-navigationP {
+/* Ocultar imágenes si existen */
+#proyectos .overlay-img {
     display: none;
 }
 
+/* ===== NAVEGACIÓN (OCULTA EN DESKTOP) ===== */
+.overlay-navigationP {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin-top: 40px;
+    padding-top: 20px;
+}
 
-/* Media Query para pantallas más pequeñas, como tablets y teléfonos */
-@media (max-width: 768px) {
-    /* ... Tus estilos responsivos anteriores ... */
+.overlay-buttonP {
+    display: none;
+    background: linear-gradient(135deg, #007cf0, #0052cc);
+    color: white;
+    border: 2px solid rgba(0, 212, 255, 0.4);
+    border-radius: 50px;
+    padding: 12px 30px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 4px 15px rgba(0, 124, 240, 0.4);
+    letter-spacing: 0.5px;
+}
 
-    /* Estilo para ocultar todos los overlay-itemP excepto el primero */
-    .overlay4 .overlay-content4 .overlay-itemP {
-        display: none;
-        opacity: 0;
-        visibility: hidden;
-        transition: opacity 0.5s ease;
+.overlay-buttonP:hover {
+    background: linear-gradient(135deg, #00d4ff, #007cf0);
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 8px 25px rgba(0, 212, 255, 0.6);
+    border-color: rgba(0, 212, 255, 0.7);
+}
+
+.overlay-buttonP:active {
+    transform: translateY(-1px) scale(1.02);
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+
+/* Tablets grandes */
+@media (max-width: 1024px) {
+    .overlay4 {
+        width: 90%;
+        padding: 50px 40px;
     }
 
-    .overlay4 .overlay-content4 .overlay-itemP.active {
-        display: block;
-        opacity: 1;
-        visibility: visible;
+    #proyectos .overlay-titleP {
+        font-size: 42px;
+    }
+
+    #proyectos .overlay-descriptionP {
+        font-size: 17px;
+        margin-bottom: 45px;
+    }
+
+    .overlay-content4 {
+        gap: 25px;
     }
 
     #proyectos .overlay-itemP {
-        align-items: center;
-        text-align: center;
+        padding: 45px 30px;
+        min-height: 180px;
     }
 
-    /* Estilo por defecto para overlays en pantallas pequeñas */
-    .overlay4 .overlay-content4 {
+    #proyectos .overlay-itemP h4 {
+        font-size: 22px;
+    }
+}
+
+/* Tablets */
+@media (max-width: 768px) {
+    .overlay4 {
+        width: 95%;
+        padding: 45px 30px 50px;
+    }
+
+    #proyectos .overlay-titleP {
+        font-size: 36px;
+        margin-bottom: 12px;
+    }
+
+    #proyectos .overlay-titleP::after {
+        width: 110px;
+        height: 3px;
+    }
+
+    #proyectos .overlay-descriptionP {
+        font-size: 16px;
+        margin-bottom: 40px;
+    }
+
+    /* Cambiar a modo carrusel en móvil */
+    .overlay-content4 {
+        display: flex;
         justify-content: center;
         align-items: center;
-        padding: 10px;
-        /* Agrega espacio interno */
+        min-height: 280px;
     }
 
-    #proyectos .overlay-img {
-        /* Estilos para las imágenes */
-        /* ... Agrega tus estilos ... */
-        width: 150px;
-        height: 250px;
-        object-fit: contain;
-        margin-top: 10px;
+    #proyectos .overlay-itemP {
+        display: none;
+        width: 90%;
+        max-width: 500px;
+        padding: 50px 30px;
+        min-height: 220px;
     }
 
-    .overlay-navigationP .overlay-buttonP {
-        margin: 5px;
-        padding: 5px 10px;
-        background-color: #001368;
-        color: white;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-        width: 100px;
-        transition: background-color 0.5s ease;
+    #proyectos .overlay-itemP.active {
+        display: flex;
     }
 
-    /* Cambiar el color de fondo al pasar el mouse por encima de los botones */
-    .overlay-navigationP .overlay-buttonP:hover {
-        background-color: #001368;
+    #proyectos .overlay-itemP h4 {
+        font-size: 21px;
+    }
+
+    /* Mostrar navegación */
+    .overlay-navigationP {
+        display: flex;
+    }
+
+    .overlay-buttonP {
+        display: block;
+    }
+}
+
+/* Móviles */
+@media (max-width: 510px) {
+    .overlay4 {
+        width: 98%;
+        padding: 40px 20px 45px;
+        border-radius: 25px;
+    }
+
+    #proyectos .overlay-titleP {
+        font-size: 32px;
+    }
+
+    #proyectos .overlay-titleP::after {
+        width: 90px;
+    }
+
+    #proyectos .overlay-descriptionP {
+        font-size: 15px;
+        margin-bottom: 35px;
+    }
+
+    .overlay-content4 {
+        min-height: 260px;
+        padding: 15px 10px;
+    }
+
+    #proyectos .overlay-itemP {
+        width: 95%;
+        padding: 45px 25px;
+        min-height: 200px;
+        border-radius: 22px;
+    }
+
+    #proyectos .overlay-itemP h4 {
+        font-size: 19px;
+        letter-spacing: 0.5px;
     }
 
     .overlay-navigationP {
-        display: block;
+        margin-top: 35px;
+        gap: 12px;
     }
 
-    .overlay-itemP .tra {
-        /* ... otros estilos ... */
-        white-space: nowrap;
-        animation: marquee 10s linear infinite;
-        /* Ajusta la duración según tus preferencias */
+    .overlay-buttonP {
+        padding: 10px 25px;
+        font-size: 15px;
+    }
+}
+
+/* Móviles muy pequeños */
+@media (max-width: 380px) {
+    .overlay4 {
+        padding: 35px 15px 40px;
+        border-radius: 20px;
     }
 
-    @keyframes marquee {
-        from {
-            transform: translateX(100%);
-        }
-
-        to {
-            transform: translateX(-100%);
-        }
+    #proyectos .overlay-titleP {
+        font-size: 28px;
     }
 
+    #proyectos .overlay-descriptionP {
+        font-size: 14px;
+    }
+
+    .overlay-content4 {
+        min-height: 240px;
+    }
+
+    #proyectos .overlay-itemP {
+        padding: 40px 20px;
+        min-height: 180px;
+    }
+
+    #proyectos .overlay-itemP h4 {
+        font-size: 17px;
+        padding: 8px 15px;
+    }
+
+    .overlay-buttonP {
+        padding: 9px 22px;
+        font-size: 14px;
+    }
 }
