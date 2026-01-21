@@ -51,11 +51,11 @@
     position: absolute;
     z-index: 1;
     text-align: center;
-    padding: 20px;
-    display: grid;
-    top: 50%;
+    /* padding: 20px; */
+    /* display: grid; */
+    /* top: 50%; */
     left: 50%;
-    transform: translate(-50%, -50%);
+    /* transform: translate(-50%, -50%); */
     width: 80%;
     height: 80%;
 }
@@ -84,11 +84,11 @@
 
 /* Agrega margen al contenedor del contenido */
 .content-containerapp {
-    margin-top: 10px; /* Ajusta el margen según tus necesidades */
+    /* margin-top: 10px; Ajusta el margen según tus necesidades */
     display: flex;
     align-items: center;
     justify-content: center;
-    grid-gap: 60px; /* Espacio entre las columnas */
+    grid-gap: 60px;  
 }
 
 .content-rightapp {
@@ -153,39 +153,91 @@ ul.increased-line-height {
 }
 
 /* Estilo para los elementos de la lista */
-ul.increased-line-height li {
-    margin-bottom: 10px; /* Ajusta el margen entre elementos según tu preferencia */
-}
+ 
 
-
+/* ===========================
+   TABLETS
+=========================== */
 @media (max-width: 768px) {
-    .overlay-contentgal img {
-        max-width: 140%; /* Cambia el valor según tus preferencias */
-        max-height: 70%;
+    .overlayapp {
+        width: 90%;
+        max-height: 80vh;
+        padding: 30px 20px;
     }
 
-/* Agrega estas reglas a tu hoja de estilos */
-.scrolling-text-container {
-    overflow: hidden; /* Oculta cualquier contenido que se desborde */
-    white-space: nowrap; /* Evita que el texto se divida en múltiples líneas */
-    display: inline-block; /* Asegura que el contenedor se ajuste al tamaño del texto */
-}
-
-.scrolling-text {
-    animation: scrollingAnimation 15s linear infinite; /* Cambia la duración según tu preferencia */
-    display: inline-block; /* Asegura que el texto no salte de línea */
-}
-
-@keyframes scrollingAnimation {
-    0% {
-        transform: translateX(100%); /* Inicia el texto fuera del contenedor hacia la derecha */
+    #app h3 {
+        font-size: 22px;
     }
-    100% {
-        transform: translateX(-100%); /* Mueve el texto completamente fuera del contenedor hacia la izquierda */
+
+    .increased-line-height {
+        font-size: 15px;
     }
 }
 
+/* ===========================
+   🔥 MÓVILES (FIX REAL)
+=========================== */
+@media (max-width: 576px) {
+    .about-sectionapp {
+        padding: 0;
+    }
 
+    .overlayapp {
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100%;
+        height: 100dvh;
+        max-height: 100dvh;
+        border-radius: 0;
+        padding: 20px 15px 90px;
+    }
 
+    .overlay-contentapp {
+        padding: 0;
+    }
+
+    #app h3 {
+        font-size: 20px;
+    }
+
+    .increased-line-height {
+        font-size: 14px;
+        line-height: 1.6;
+        text-align: justify;
+    }
+
+    ul.increased-line-height li {
+        font-size: 14px;
+        padding-left: 20px;
+    }
 }
 
+/* ===========================
+   MÓVILES PEQUEÑOS
+=========================== */
+@media (max-width: 380px) {
+    .overlayapp {
+        padding: 15px 12px 100px;
+    }
+
+    #app h3 {
+        font-size: 18px;
+    }
+
+    .increased-line-height {
+        font-size: 13px;
+    }
+}
+
+/* ===========================
+   LANDSCAPE MÓVIL
+=========================== */
+@media (max-height: 600px) and (orientation: landscape) {
+    .overlayapp {
+        top: 0;
+        transform: translateX(-50%);
+        height: 100vh;
+        max-height: 100vh;
+    }
+}
